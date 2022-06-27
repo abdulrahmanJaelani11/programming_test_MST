@@ -1,4 +1,4 @@
-# CodeIgniter 4 Application Starter
+# Programming Test, Aplikasi Transaksi Sederhana
 
 ## What is CodeIgniter?
 
