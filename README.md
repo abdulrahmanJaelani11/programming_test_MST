@@ -1,37 +1,43 @@
-# Programming Test, Aplikasi Transaksi Sederhana
+# Aplikasi Transaksi Berbasis web
 
-## What is CodeIgniter?
+## Keterangan
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Aplikasi transaksi berbasis web ini merupakan aplikasi transaksi sederhana yang berfungsi sebagai tempat di datanya barang pembelian, selain itu dengan adanya aplikasi ini dapat mempermudah user dalam melakukan transaksi, membuat laporan transaksi dan melihat history dari tiap tiap transaksi yang sudah dilakukan.
+Untuk bisa memahami lebih jauh mengenai aplikasi ini, silahkan bisa mengunjungi [aplikasinya](http://transaksitest.ezyro.com/).
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Teknologi yang digunakan
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
+Aplikasi Transaksi ini di buat dengan beberapa teknologi, yaitu
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Bootstrap</li>
+<li>jQuery</li>
+<li>CodeIgniter 4</li>
+</ul>
 
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Untuk Membuat tampilan atau desain nya disini saya menggunakan CSS dan sebuah Framework css yaitu Bootstrap, untuk membuat website lebih interacktif saya menggunakan sebuah library javascript yaitu jQuery untuk mempermudah dalam penulisan kode, dan untuk logika pemrograman nya sendiri saya menggunakan sebuah framework PHP yaitu CodeIgniter versi 4 untuk mempermudah saya dalam membangun aplikasi.
+Adapun library tambahan yang saya gunakan dalam membangun aplikasi ini, yaitu :
 
-## Installation & updates
+<ul>
+<li>Sweetalert</li>
+<li>Dompdf</li>
+</ul>
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Sweetalert digunakan untuk membuat sebuah notifikasi agar lebih menarik <br>
+Dompdf digunakan untuk mengkonversi file php menjadi file pdf, sehingga dapat mencetak laporan transaksi dan menyimpanya dalam bentuk pdf
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## Cara Penggunaan Aplikasi
 
-## Setup
+Untuk dapat menjalankan aplikasi dengan baik maka bisa di perhatikan pada langkah langkah berikut:
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+<ol>
+<li>Kunjungi laman http://transaksitest.ezyro.com/</li>
+<li>Di halaman Transaksi terdapat beberapa field inputan yang wajid di isi, seperti field Tanggal, Customer, Barang, dan jumlah</li>
+<li>Inputkan data data sesuai dengan field inputan yang tertera</li>
+<li>Setelah melengkapi field pada form, klik tombol konfirmasi untuk menyimpan barang, maka akan muncul sebuah table yang berfungsi untuk menampung beberapa barang yang akan di beli, layaknya keranjang pada toko online </li>
+<li>Setelah semua barang yang akan dibeli ditampung pada table, maka klik tombol simpan di bawah tabel untuk menyimpan rincian dari transaksi</li>
+</ol>
 
 This means that you should configure your web server to "point" to your project's *public* folder, and
 not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
