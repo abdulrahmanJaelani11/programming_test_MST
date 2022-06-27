@@ -31,12 +31,34 @@ Dompdf digunakan untuk mengkonversi file php menjadi file pdf, sehingga dapat me
 
 Untuk dapat menjalankan aplikasi dengan baik maka bisa di perhatikan pada langkah langkah berikut:
 
+### Langkah-langkah menginput data barang
 <ol>
 <li>Kunjungi laman http://transaksitest.ezyro.com/</li>
 <li>Di halaman Transaksi terdapat beberapa field inputan yang wajid di isi, seperti field Tanggal, Customer, Barang, dan jumlah</li>
 <li>Inputkan data data sesuai dengan field inputan yang tertera</li>
-<li>Setelah melengkapi field pada form, klik tombol konfirmasi untuk menyimpan barang, maka akan muncul sebuah table yang berfungsi untuk menampung beberapa barang yang akan di beli, layaknya keranjang pada toko online </li>
-<li>Setelah semua barang yang akan dibeli ditampung pada table, maka klik tombol simpan di bawah tabel untuk menyimpan rincian dari transaksi</li>
+<li>Setelah melengkapi field pada form, klik tombol konfirmasi untuk menyimpan barang, maka form yang tadi terisi akan kembali kosong kecuali No Transaksi, Customer dan tanggak tidak akan ter refresh</li>
+<li>Setelah itu jika masih ada barang yang akan dibeli maka user bisa menginputkannya kembali di form</li>
+<li>jika terdapat kesalahan pada saat menginputkan data maka user bisa mengubah atau menghapus data dengan mengklik tombol yang ada pada tiap tiap kolom</li>
+<li>Setelah semua barang yang akan dibeli ditampung pada table, maka klik tombol simpan di bawah tabel untuk menyimpan riwayat dari transaksi</li>
+<li>Setelah mengklik tombol simpan maka akan muncul notifikasi yang menginformasikan bahwa transaksi berhasil disimpan, jika user mengklik tombol lihat pada notifikasi maka akan diarahkan pada halaman daftar-transaksi, jika user mengklik tidak makan halaman akan ter refresh</li>
+</ol>
+
+### Keterangan mengenai halaman Daftar Transaksi
+
+<ol>
+<li>Untuk melihat daftar transaksi yang telah dilakukan maka user bisa mengunjungi laman http://transaksitest.ezyro.com/daftar-transaksi atau bisa dengan mengklik daftar transaksi pada navigasi bar, maka akan diarahkan pada halaman daftar transaksi</li>
+<li>Pada halaman daftar-transaksi terdapat sebuah table yang berisi daftar-daftar transaksi yang pernah dilakukan</li>
+<li>User juga dapat mencetak table transaksi tersebut dengan mengklik tombol print yang ada di atas table</li>
+<li>Selain mencetak user juga dapat menghapus serta melihat detail dari tiap tiap transaksi</li>
+</ol>
+
+### Keterangan mengenai halaman Barang
+
+<ol>
+<li>Untuk mengatur barang (Menambah/Mengubah/menghapus) maka user bisa mengunjungi laman http://transaksitest.ezyro.com/tambah-barang atau bisa dengan mengklik Barang pada navigasi bar</li>
+<li>Pada halaman barang terdapat sebuah table yang berisi daftar-daftar barang yang akan ditampilkan pada form transaksi</li>
+<li>User bisa menambahkan data barang yang akan dijual dengan mengklik tombol Tambah barang yang ada di atas table</li>
+<li>Isi</li>
 </ol>
 
 This means that you should configure your web server to "point" to your project's *public* folder, and
