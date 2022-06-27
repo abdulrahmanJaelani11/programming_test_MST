@@ -80,10 +80,21 @@ class Proses extends BaseController
         echo json_encode(view('table/' . $nama_file));
     }
 
+    public function getNoTransaksi()
+    {
+        echo date('Ymd') . time();
+    }
+
     public function prosesSimpan()
     {
         $data = $this->request->getVar();
         if (!$this->validate([
+            'no_transaksi' => [
+                'rules' => "required",
+                'errors' => [
+                    'required' => "Maaf, No Transaksi Masih Kosong",
+                ]
+            ],
             'customer' => [
                 'rules' => "required",
                 'errors' => [
@@ -112,6 +123,7 @@ class Proses extends BaseController
             $pesan = [
                 'status' => 400,
                 'pesan' => [
+                    'no_transaksi' => $this->validasi->getError('no_transaksi'),
                     'customer' => $this->validasi->getError('customer'),
                     'tanggal' => $this->validasi->getError('tanggal'),
                     'barang' => $this->validasi->getError('barang'),
@@ -330,6 +342,8 @@ class Proses extends BaseController
         } else {
             $no_transaksi = $data['u_no_transaksi'];
             $kode = $data['u_barang'];
+            // echo json_encode($kode);
+            // die;
             $dataBarang = $this->TsalesModel->db->query("SELECT * FROM t_sales JOIN m_customer ON t_sales.cus_id=m_customer.id_customer JOIN m_barang ON m_barang.kode=t_sales.kode WHERE  t_sales.no_transaksi = '$no_transaksi' AND t_sales.kode = '$kode'")->getRowArray();
 
             $sub_total = $dataBarang['harga'] * $data['u_jumlah'];

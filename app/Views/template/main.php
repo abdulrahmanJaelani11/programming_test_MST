@@ -57,7 +57,7 @@
                             <a href="<?= base_url('/daftar-transaksi'); ?>" class="nav-link"><i class="fas fa-list-ol"></i><span>Daftar Transaksi</span></a>
                         </li>
                         <li class="nav-item <?= $title == 'Tambah Barang' ? 'active' : ''; ?>">
-                            <a href="<?= base_url('/tambah-barang'); ?>" class="nav-link"><i class="fab fa-accusoft"></i><span>Tambah Barang</span></a>
+                            <a href="<?= base_url('/tambah-barang'); ?>" class="nav-link"><i class="fab fa-accusoft"></i><span>Barang</span></a>
                         </li>
                     </ul>
                 </div>

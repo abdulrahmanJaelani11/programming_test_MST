@@ -26,7 +26,7 @@ class Home extends BaseController
 	{
 
 		$data = [
-			'title' => "Home",
+			'title' => "Halaman Transaksi",
 			'barang' => $this->BarangModel->findAll(),
 			'customer' => $this->CustomerModel->findAll(),
 

@@ -34,7 +34,7 @@ function getTable(url) {
     type: "post",
     dataType: "json",
     success: function (data) {
-    //   console.log(data); 
+      console.log(data); 
       $("#table").html(data);
     },
   });

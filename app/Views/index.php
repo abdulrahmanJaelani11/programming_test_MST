@@ -16,7 +16,14 @@ function getNoTransaksi()
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label for="no_transaksi">No Transaksi</label>
-                            <input type="text" name="no_transaksi" value="<?= getNoTransaksi(); ?>" id="no_transaksi" class="form-control" readonly>
+                            <div class="row">
+                                <div class="col-10">
+                                    <input type="text" name="no_transaksi" value="<?= getNoTransaksi(); ?>" id="no_transaksi" class="form-control" readonly>
+                                </div>
+                                <div class="col-2">
+                                    <button type="button" onclick="generateNoTransaksi()" name="kirim" class="btn btn-primary btn-block"> <i class="fas fa-retweet"></i> </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="customer">Nama Customer</label>
@@ -97,13 +104,7 @@ function getNoTransaksi()
                         <input type="hidden" name="u_no_transaksi" id="u_no_transaksi">
                         <input type="hidden" name="u_sub_total" id="u_sub_total">
                         <input type="hidden" name="u_total" id="u_total">
-                        <label for="barang">Barang</label>
-                        <select name="u_barang" id="u_barang" class="form-control">
-                            <option value="">Pilih Barang</option>
-                            <?php foreach ($barang as $row) : ?>
-                                <option value="<?= $row['kode']; ?>"><?= $row['nama_barang']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        <input type="hidden" name="u_barang" id="u_barang" class="form-control" readonly>
                         <div class="invalid-feedback invalid-u_barang"></div>
                     </div>
                     <div class="form-group">
@@ -113,11 +114,11 @@ function getNoTransaksi()
                     </div>
                     <div class="form-group">
                         <label for="u_diskon">Diskon</label>
-                        <input type="number" name="u_diskon" id="u_diskon" class="form-control">
+                        <input type="number" name="u_diskon" id="u_diskon" class="form-control" placeholder="Masukan Diskon(Optional)">
                     </div>
                     <div class="form-group">
                         <label for="u_ongkir">Ongkir</label>
-                        <input type="number" name="u_ongkir" id="u_ongkir" class="form-control">
+                        <input type="number" name="u_ongkir" id="u_ongkir" class="form-control" placeholder="Masukan Ongkir(Optional)">
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -139,8 +140,11 @@ function getNoTransaksi()
 
 <?= $this->section('script'); ?>
 <script>
-    var linkTable = '<?= base_url('Proses/getTable/Tsales/TsalesModel'); ?>' + '/' + $("#no_transaksi").val()
+    var noTransaksi = $("#no_transaksi").val()
+    var linkTable = '<?= base_url('Proses/getTable/Tsales/TsalesModel'); ?>' + '/' + noTransaksi
     getTable(linkTable)
+    console.log(noTransaksi)
+
 
     function getId(url) {
         showform(`formCardUbahTsales`)
@@ -157,6 +161,23 @@ function getNoTransaksi()
                 $("#u_jumlah").val(data.jumlah)
                 $("#u_diskon").val(data.diskon)
                 $("#u_ongkir").val(data.ongkir)
+                $("#u_barang").val(data.kode)
+            }
+        });
+    }
+
+    function generateNoTransaksi() {
+        $.ajax({
+            url: "<?= base_url("Proses/getNoTransaksi"); ?>",
+            type: 'post',
+            success: function(data) {
+                // console.log(data)
+                $("#no_transaksi").val(data)
+                resetForm()
+                $("#customer").attr('readonly', false)
+                $("#customer").val()
+                linkTable = '<?= base_url('Proses/getTable/Tsales/TsalesModel'); ?>' + '/' + data
+                getTable(linkTable)
             }
         });
     }
@@ -186,7 +207,6 @@ function getNoTransaksi()
         $("#jumlah").val('')
         $("#diskon").val('')
         $("#ongkir").val('')
-        $("#no_transaksi").val('<?= date('Ymd') . time(); ?>')
     }
 
     removeError()
@@ -215,6 +235,10 @@ function getNoTransaksi()
                     hideForm(classCardForm)
                 }
                 if (data.status == 400) {
+                    if (data.pesan.no_transaksi) {
+                        $("#no_transaksi").addClass('is-invalid')
+                        $('.invalid-no_transaksi').text(data.pesan.no_transaksi)
+                    }
                     if (data.pesan.customer) {
                         $("#customer").addClass('is-invalid')
                         $('.invalid-customer').text(data.pesan.customer)
@@ -306,6 +330,9 @@ function getNoTransaksi()
                 if (data.status == 200) {
                     Swal.fire("Berhasil", data.pesan, "success");
                     getTable(linkTable);
+                    // resetForm()
+                    $("#customer").attr('readonly', false)
+                    // $("#customer").val()
                 }
             },
         });
