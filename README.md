@@ -22,6 +22,7 @@ Adapun library tambahan yang saya gunakan dalam membangun aplikasi ini, yaitu :
 <ul>
 <li>Sweetalert</li>
 <li>Dompdf</li>
+<li>Template Stisla</li>
 </ul>
 
 Sweetalert digunakan untuk membuat sebuah notifikasi agar lebih menarik <br>
@@ -58,34 +59,9 @@ Untuk dapat menjalankan aplikasi dengan baik maka bisa di perhatikan pada langka
 <li>Untuk mengatur barang (Menambah/Mengubah/menghapus) maka user bisa mengunjungi laman http://transaksitest.ezyro.com/tambah-barang atau bisa dengan mengklik Barang pada navigasi bar</li>
 <li>Pada halaman barang terdapat sebuah table yang berisi daftar-daftar barang yang akan ditampilkan pada form transaksi</li>
 <li>User bisa menambahkan data barang yang akan dijual dengan mengklik tombol Tambah barang yang ada di atas table</li>
-<li>Isi</li>
+<li>Kemudian isi field yang ada pada form, lalu klik Simpan</li>
+<li>Setelah mengklik tombol simpan maka data akan tersimpan dan table akan seketika ter refresh</li>
+<li>Untuk mengubah barang user bisa mengklik tombil warna hijau, maka akan muncul form untuk mengubah</li>
+<li>Di form ubah user hanya bisa mengubah nama barang dan harga barang saja tanpa bisa mengubah kode barang</li>
+<li>Untuk menghapus barang user bisa mengklik tombol berwarna merah dengan logo sampah, maka data akan terhapus dan table akan seketika ter refresh</li>
 </ol>
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use Github issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.3 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
