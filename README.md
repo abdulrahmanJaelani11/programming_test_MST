@@ -32,7 +32,7 @@ Dompdf digunakan untuk mengkonversi file php menjadi file pdf, sehingga dapat me
 
 Untuk dapat menjalankan aplikasi dengan baik maka bisa di perhatikan pada langkah langkah berikut:
 
-### Langkah-langkah menginput data barang
+### Langkah-langkah menginput data Transaksi
 <ol>
 <li>Kunjungi laman http://transaksitest.ezyro.com/</li>
 <li>Di halaman Transaksi terdapat beberapa field inputan yang wajid di isi, seperti field Tanggal, Customer, Barang, dan jumlah</li>
